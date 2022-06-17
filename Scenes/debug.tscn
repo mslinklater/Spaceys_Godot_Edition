@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="DebugSceneRoot" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Node2D"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "DEBUG"
