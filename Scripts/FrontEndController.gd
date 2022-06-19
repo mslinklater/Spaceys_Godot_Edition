@@ -10,4 +10,4 @@ func _on_LaunchGameButton_pressed():
 	RootController.enter_game()
 	
 func _on_QuitButton_pressed():
-	pass # Replace with function body.
+	OS.kill(OS.get_process_id())

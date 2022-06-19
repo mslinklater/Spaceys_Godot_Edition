@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=1]
-
-[sub_resource type="CubeMesh" id=1]
+[ext_resource path="res://GameObjects/Player/player.tscn" type="PackedScene" id=2]
 
 [node name="GameRoot" type="Spatial"]
 script = ExtResource( 1 )
@@ -23,10 +22,8 @@ margin_bottom = 36.0
 text = "QUIT"
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.71752 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48259, 2.29728, 4.71752 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
-material/0 = null
+[node name="Player" parent="." instance=ExtResource( 2 )]
 
 [connection signal="pressed" from="Node2D/QuitButton" to="." method="_on_QuitButton_pressed"]
