@@ -19,10 +19,11 @@ func _ready():
 	# debug UI
 	if OS.is_debug_build():
 		# add debug scene to root
-		add_child(debug_scene.instance())
+		RootController.enable_debug_scene()
 	
-	# front end
-	add_child(front_end_scene.instance())
+	# all boot logic done, now enter front end
+	RootController.enter_front_end()
 
-func _process(delta):
+func _process(_delta):
 	pass
+

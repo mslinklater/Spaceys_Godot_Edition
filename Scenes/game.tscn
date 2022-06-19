@@ -1,11 +1,32 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Spatial" type="Spatial"]
+[ext_resource path="res://Scripts/GameController.gd" type="Script" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="GameRoot" type="Spatial"]
+script = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Node2D"]
 margin_left = 968.0
-margin_right = 1008.0
+margin_right = 1019.0
 margin_bottom = 14.0
 text = "InGame"
+
+[node name="QuitButton" type="Button" parent="Node2D"]
+margin_left = 968.0
+margin_top = 16.0
+margin_right = 1013.0
+margin_bottom = 36.0
+text = "QUIT"
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.71752 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[connection signal="pressed" from="Node2D/QuitButton" to="." method="_on_QuitButton_pressed"]
