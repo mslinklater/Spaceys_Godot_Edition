@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=1]
 [ext_resource path="res://GameObjects/Player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=3]
+[ext_resource path="res://Resources/game_environment.tres" type="Environment" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -28,10 +29,10 @@ margin_bottom = 36.0
 text = "QUIT"
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.719, 17.678 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.7488, 20.0217 )
 script = ExtResource( 3 )
 distance = 20.0
-height = 15.0
+height = 12.0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
@@ -39,5 +40,12 @@ height = 15.0
 transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 5, 0, -1, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 4 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.555207, 0.831712, 0, -0.831712, 0.555207, 0, 18.6675, 0 )
+shadow_enabled = true
 
 [connection signal="pressed" from="TempUI/QuitButton" to="." method="_on_QuitButton_pressed"]

@@ -10,3 +10,6 @@ move_speed = 5
 bullet_scene = ExtResource( 3 )
 
 [node name="PlayerExport" parent="." instance=ExtResource( 2 )]
+
+[node name="BulletSpawn" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54614, 0 )
