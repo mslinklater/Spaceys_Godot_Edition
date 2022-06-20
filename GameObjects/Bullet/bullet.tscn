@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Bullet/bullet.gltf" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Bullet.gd" type="Script" id=2]
+
+[node name="bullet" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+maximum_height = 30.0
+speed = 25.0
