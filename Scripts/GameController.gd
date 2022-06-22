@@ -1,5 +1,7 @@
 extends Spatial
 
+export(PackedScene) var alien_scene
+
 func _enter_tree():
 	print("Game_enter_tree()")
 

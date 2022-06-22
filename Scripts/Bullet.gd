@@ -1,4 +1,4 @@
-extends Spatial
+extends KinematicBody
 
 export(float) var maximum_height
 export(float) var speed
@@ -9,7 +9,24 @@ func _ready():
 	pass
 
 func _process(_delta):
-	translation.y += speed * _delta
+	var _col = move_and_collide(Vector3(0,speed,0) * _delta)
+	
+	var destroy_self = false
+	
+	if _col:
+		if _col.collider:
+			# work out what it is
+			var barrierbrick = _col.collider as BarrierBrick
+			if barrierbrick:
+				pass
+#			else:
+#				var alien = _col.collider as 
+			_col.collider.queue_free()
+			destroy_self = true
+	
 	if(translation.y > maximum_height):
+		destroy_self = true;
+
+	if(destroy_self):
 		emit_signal("expired")
 		queue_free()

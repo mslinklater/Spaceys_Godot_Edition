@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "Alien",
+"language": "GDScript",
+"path": "res://Scripts/alien.gd"
+}, {
+"base": "StaticBody",
+"class": "BarrierBrick",
+"language": "GDScript",
+"path": "res://Scripts/barrier_brick.gd"
+} ]
+_global_script_class_icons={
+"Alien": "",
+"BarrierBrick": ""
+}
+
 [application]
 
 config/name="SpaceysGodotEdition"
