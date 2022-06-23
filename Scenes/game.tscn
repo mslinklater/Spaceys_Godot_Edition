@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=1]
 [ext_resource path="res://GameObjects/Player/player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Resources/game_environment.tres" type="Environment" id=4]
 [ext_resource path="res://GameObjects/Barrier/barrier.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameObjects/Aliens/alien.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/AlienSwarm.gd" type="Script" id=7]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -62,5 +63,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 0 )
 
 [node name="BarrierRoot4" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4, 0 )
+
+[node name="AlienSwarm" type="Spatial" parent="."]
+script = ExtResource( 7 )
 
 [connection signal="pressed" from="TempUI/QuitButton" to="." method="_on_QuitButton_pressed"]
