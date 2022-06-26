@@ -26,11 +26,18 @@ margin_bottom = 14.0
 text = "InGame"
 
 [node name="QuitButton" type="Button" parent="TempUI"]
-margin_left = 968.0
+margin_left = 960.0
 margin_top = 16.0
-margin_right = 1013.0
+margin_right = 1024.0
 margin_bottom = 36.0
 text = "QUIT"
+
+[node name="SpawnButton" type="Button" parent="TempUI"]
+margin_left = 960.0
+margin_top = 40.0
+margin_right = 1024.0
+margin_bottom = 60.0
+text = "SPAWN"
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.7488, 20.0217 )
@@ -66,5 +73,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4, 0 )
 
 [node name="AlienSwarm" type="Spatial" parent="."]
 script = ExtResource( 7 )
+num_columns = 8
+num_rows = 5
+spacing = Vector2( 4, 3 )
+alien_scene = ExtResource( 6 )
+move_extent = 5.0
+move_amount = 0.25
+drop_amount = 0.5
+start_height = 8.0
+per_level_drop = 0.25
 
 [connection signal="pressed" from="TempUI/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="TempUI/SpawnButton" to="." method="_on_SpawnButton_pressed"]

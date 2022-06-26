@@ -19,8 +19,9 @@ func _process(_delta):
 			var barrierbrick = _col.collider as BarrierBrick
 			if barrierbrick:
 				pass
-#			else:
-#				var alien = _col.collider as 
+			var alien = _col.collider as Alien
+			if alien:
+				Singletons.alien_swarm.kill_alien(_col.collider)
 			_col.collider.queue_free()
 			destroy_self = true
 	

@@ -26,3 +26,6 @@ func _on_QuitButton_pressed():
 func quit_to_front_end():
 	RootController.enter_front_end()
 	
+func _on_SpawnButton_pressed():
+	if $AlienSwarm.current_phase == AlienSwarm.SwarmPhase.EMPTY:
+		$AlienSwarm.current_phase = AlienSwarm.SwarmPhase.BUILDING
